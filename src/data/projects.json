@@ -1,0 +1,91 @@
+[
+  {
+    "title": "Interactive Human Body with Hotspots & Quiz",
+    "description": "An interactive human body illustration with clickable hotspots to reveal information about different body parts. Includes a quiz feature to test knowledge. Built with modern web technologies for accessibility and engagement.",
+  "images": ["/src/assets/interactives/humanbody/assets/Hbody.166ab625.jpg"],
+    "tech": ["HTML5", "CSS3", "JavaScript", "Vue.js", "Responsive Design", "Accessibility"],
+    "demo": "assets/interactives/humanbody/index.html"
+  },
+  {
+    "title": "Interactive Flashcard Health Learning Tool",
+    "description": "An engaging health education flashcard system designed for interactive learning. This tool features a card-based interface where students can review health and medical concepts through an intuitive flip-card experience. The application provides a structured learning environment with modern responsive design, making it perfect for health education courses and medical training programs.",
+    "images": ["https://images.pexels.com/photos/7722918/pexels-photo-7722918.jpeg"],
+    "tech": ["HTML5", "CSS3", "JavaScript", "Vue.js", "Responsive Design", "Accessibility"],
+    "demo": "assets/interactives/flashcard-health/index.html"
+  },
+  {
+    "title": "Likert Scale Health Survey Interactive",
+    "description": "A Likert scale-based health survey interactive built with modern web technologies. Users can rate statements on a scale, and results are visualized for instant feedback. This interactive supports multiple users, saves data in a database, and displays user averages in a graph for enhanced engagement and analytics. Designed for accessibility and responsive use in educational or healthcare settings.",
+  "images": ["/src/assets/images/Likertsurvey1.png", "/src/assets/images/Likertsurvey2.png"],
+    "tech": ["HTML5", "CSS3", "JavaScript", "Vue.js", "Responsive Design", "Accessibility"],
+    "demo": "assets/interactives/likertscale-health/index.html"
+  },
+  {
+    "title": "Peer Evaluation (Self & Peer with Analytics)",
+    "description": "A robust peer evaluation tool that enables both self and peer assessments within groups. This interactive allows students to rate themselves and their peers on various criteria, with results visualized using Highcharts for clear, actionable insights. The system automatically calculates and displays group and individual averages, making it easy for instructors and students to identify strengths and areas for improvement. Designed for accessibility, responsive use, and seamless integration into eLearning environments.",
+  "images": ["/src/assets/images/peereval1.png", "/src/assets/images/peereval2.png", "/src/assets/images/peereval3.png"],
+    "tech": ["HTML5", "CSS3", "JavaScript", "Highcharts", "Accessibility", "Responsive Design"],
+    "demo": "assets/interactives/peereval/index.html"
+  },
+  {
+    "title": "Complex Survey Activity",
+    "description": "Designed a survey activity where students make multiple-choice selections, with data saved in a database. Students can revisit to view results displayed as bar graphs and pie charts using the Highcharts plugin.",
+  "images": ["/src/assets/images/Imagesup1.jpg", "/src/assets/images/Imagesup2.jpg", "/src/assets/images/Imagesup3.jpg"],
+    "tech": ["HTML5", "CSS3", "JavaScript", "LMS", "Responsive Design"],
+    "video": "assets/videos/Pediatric-Health-Promotions-and-Immunizations-Case-Scenarios.webm"
+  },
+  {
+    "title": "Printable PDF Functionality for LMS",
+    "description": "Developed a feature allowing students to print course content as PDFs. The feature crawls through interactive activities and extracts all content into a single print preview, enabling offline access to course materials.",
+    "tech": ["HTML5", "CSS3", "JavaScript", "Accessibility", "Responsive Design"]
+  },
+  {
+    "title": "Scenario-Based Activity",
+    "description": "Created an interactive activity where students explore scenario-specific content by clicking on scenarios. Each scenario includes a quiz, and students can view and print a summary of their responses and scores. All data is saved in a database for instructor analysis with visual charts.",
+  "images": ["/src/assets/images/Imagexl1.jpg", "/src/assets/images/Imagexl2.jpg", "/src/assets/images/Imagexl3.jpg"],
+    "tech": ["HTML5", "CSS3", "JavaScript", "LMS", "Responsive Design"],
+    "video": "assets/videos/Program-Project-and-Portfolio-Management.webm"
+  },
+  {
+    "title": "Interactive Nursing Practice Simulator",
+    "description": "This project was a Vue.js 3 application (using the Composition API) designed to simulate healthcare nursing practice. Users interact with a responsive and fully accessible body image, clicking on designated “hotspots” to reveal detailed descriptions of specific medical scenarios. The application also includes a note-taking feature, allowing users to record observations and save their completed assessments as PDFs.",
+    "tech": ["Vue.js 3", "HTML5", "CSS3", "JavaScript", "Accessibility", "Responsive Design"]
+  },
+  {
+    "title": "Custom LMS Themes",
+    "description": "Developed custom themes using JavaScript and CSS to align with partner branding, enhancing LMS customization and front-end development for educational institutions.",
+    "tech": ["HTML5", "CSS3", "JavaScript", "LMS", "Responsive Design"]
+  },
+  {
+    "title": "Interactive Maps",
+    "description": "Implemented a click-and-reveal map feature where students click on states to display information. Used the Highcharts plugin for accessible and responsive maps.",
+  "images": ["/src/assets/images/Imagemap1.jpg", "/src/assets/images/Imagemap2.jpg", "/src/assets/images/Imagemap3.jpg"],
+    "tech": ["HTML5", "CSS3", "JavaScript", "Accessibility", "Responsive Design"],
+    "video": "assets/videos/Prescriptive-Authority-Websites.webm"
+  },
+  {
+    "title": "Multiple Choice Activity",
+    "description": "Developed a multiple-choice quiz activity where students can select answers and print their submissions as PDFs. All responses are stored in a database for instructor review.",
+  "images": ["/src/assets/images/Imager1.jpg", "/src/assets/images/Imager2.jpg", "/src/assets/images/Imager3.jpg"],
+    "tech": ["HTML5", "CSS3", "JavaScript", "Accessibility", "Responsive Design"],
+    "video": "assets/videos/Making-the-Best-of-Your-Field-Experience.webm"
+  },
+  {
+    "title": "Interactive Presentation",
+    "description": "Created a presentation feature where students can explore scenarios through buttons, with each scenario displaying information in a tabbed format.",
+  "images": ["/src/assets/images/Imageru1.jpg", "/src/assets/images/Imageru2.jpg", "/src/assets/images/Imageru3.jpg"],
+    "tech": ["HTML5", "CSS3", "JavaScript", "Accessibility", "Responsive Design"]
+  },
+  {
+    "title": "Responsive Media Framework",
+    "description": "Contributed to the development of an in-house framework for creating responsive media content. Led the R&D team for accessibility testing and development.",
+    "tech": ["HTML5", "CSS3", "JavaScript", "Accessibility", "Responsive Design"]
+  },
+  {
+    "title": "Peer Evaluation Group Activity",
+    "description": "Developed a system enabling students to evaluate their group members, while instructors can create unlimited groups with unlimited members. The system automates data storage in a database, eliminating manual effort for instructors.",
+  "images": ["/src/assets/images/Peernew1.jpg", "/src/assets/images/peernew2.jpg", "/src/assets/images/peernew3.jpg"],
+    "tech": ["HTML5", "CSS3", "JavaScript", "Database", "LMS Integration"],
+    "video": "assets/videos/Peer-Evaluation-Form2.webm"
+  }
+]
