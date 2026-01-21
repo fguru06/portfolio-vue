@@ -96,7 +96,43 @@
 import { ref, onMounted, nextTick } from 'vue'
 import projectsData from '../data/projects.json'
 
-const projects = ref(projectsData)
+const resolveMediaPath = (value) => {
+  if (!value) return value
+  if (typeof value !== 'string') return value
+  if (/^https?:\/\//i.test(value)) return value
+
+  const trimmed = value.replace(/^\/+/, '')
+
+  if (trimmed.startsWith('src/')) {
+    const relative = trimmed.replace(/^src\//, '')
+    return new URL(`../${relative}`, import.meta.url).href
+  }
+
+  if (trimmed.startsWith('assets/')) {
+    return new URL(`../${trimmed}`, import.meta.url).href
+  }
+
+  return new URL(`../${trimmed}`, import.meta.url).href
+}
+
+const normalizeProject = (project) => {
+  const normalized = { ...project }
+  if (Array.isArray(project.images)) {
+    normalized.images = project.images.map((img) => resolveMediaPath(img)).filter(Boolean)
+  }
+  if (project.video) {
+    normalized.video = resolveMediaPath(project.video)
+  }
+  if (project.demo) {
+    normalized.demo = resolveMediaPath(project.demo)
+  }
+  if (project.details) {
+    normalized.details = resolveMediaPath(project.details)
+  }
+  return normalized
+}
+
+const projects = ref(projectsData.map(normalizeProject))
 
 function openDemo(demoUrl) {
   window.open(demoUrl, '_blank')
