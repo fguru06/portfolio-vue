@@ -4,7 +4,7 @@
       <h2>Contact</h2>
       <hr />
     </div>
-    <div class="card">
+  <div class="card reveal">
       <div class="contact-section">
         <h2 class="section-title">Get In Touch</h2>
         <div class="row">
@@ -61,65 +61,84 @@
 </script>
 
 <style scoped>
-.section-heading {
-  text-align: center;
-  margin-bottom: 2rem;
-}
-.section-heading h2 {
-  font-size: 2.5rem;
-  font-weight: bold;
-  color: #1565c0;
-  margin-bottom: 0.5rem;
-}
-.section-heading hr {
-  border: none;
-  border-top: 4px solid #e0e4ea;
-  width: 90%;
-  margin: 0 auto;
-}
 .card {
-  background: #fff;
-  border-radius: 1rem;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  padding: 2rem;
-  margin-bottom: 2rem;
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  box-shadow: var(--shadow-sm);
+  padding: clamp(2rem, 3vw, 2.75rem);
 }
-.contact-section {
-  padding: 0;
-}
+
 .section-title {
-  font-size: 2rem;
-  font-weight: bold;
-  margin-bottom: 1.5rem;
-  color: #2196f3;
-  text-align: center;
+  font-size: clamp(1.75rem, 2.5vw, 2.1rem);
+  font-weight: 700;
+  margin-bottom: 1.75rem;
+  color: var(--color-heading);
 }
+
 .contact-info p {
-  font-size: 1.1rem;
-  color: #444;
+  font-size: 1.05rem;
+  color: var(--color-text-muted);
 }
+
 .contact-details {
-  margin-bottom: 1rem;
+  margin: 1.25rem 0;
+  display: grid;
+  gap: 0.75rem;
 }
+
 .contact-item {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  font-size: 1rem;
+  gap: 0.75rem;
+  color: var(--color-heading);
+  font-weight: 500;
 }
+
+.contact-item i {
+  color: var(--color-primary);
+  font-size: 1.1rem;
+}
+
 .social-icons {
   display: flex;
-  gap: 1rem;
-  font-size: 1.5rem;
+  gap: 0.85rem;
+  font-size: 1.3rem;
 }
+
 .social-icon {
-  color: #333;
-  transition: color 0.2s;
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(247, 249, 255, 0.9);
+  color: var(--color-heading);
+  box-shadow: 0 12px 24px rgba(15, 23, 42, 0.12);
+  transition: transform 160ms ease, box-shadow 200ms ease, background 200ms ease, color 160ms ease;
 }
+
 .social-icon:hover {
-  color: #2196f3;
+  background: var(--gradient-primary);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 18px 32px rgba(76, 111, 255, 0.24);
 }
+
 .contact-form .form-control {
-  border-radius: 0.5rem;
+  border-radius: 16px;
+  border: 1.5px solid rgba(15, 23, 42, 0.1);
+  padding: 0.85rem 1rem;
+  background: rgba(255, 255, 255, 0.88);
+  box-shadow: none;
+}
+
+.contact-form .form-control:focus {
+  border-color: rgba(76, 111, 255, 0.45);
+  box-shadow: 0 0 0 3px rgba(76, 111, 255, 0.12);
+}
+
+.contact-form button {
+  margin-top: 0.5rem;
 }
 </style>

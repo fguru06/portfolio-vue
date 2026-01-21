@@ -4,19 +4,28 @@
       <h2>Testimonials</h2>
       <hr />
     </div>
-    <div class="card">
-      <div class="row testimonials-container">
-        <div class="col-md-6 mb-4" v-for="testimonial in testimonials" :key="testimonial.author">
-          <div class="card h-100 p-4 shadow-sm">
+    <div class="container">
+      <div class="row testimonials-row">
+        <div class="col-md-4 mb-4" v-for="testimonial in testimonials" :key="testimonial.author">
+          <div class="testimonial-card h-100 p-4 reveal">
             <div class="testimonial-content mb-3">
-              <i class="bi bi-quote quote-icon"></i>
+              <span class="quote-mark">“</span>
               <p class="testimonial-text">{{ testimonial.text }}</p>
             </div>
             <div class="testimonial-author">
-              <h4 class="author-name mb-0">{{ testimonial.author }}</h4>
+              <a href="#" class="author-name">{{ testimonial.author }}</a>
               <p class="author-position mb-0 text-muted">{{ testimonial.position }}</p>
             </div>
           </div>
+        </div>
+      </div>
+
+      <!-- static indicators like in screenshot -->
+      <div class="d-flex justify-content-center mt-3">
+        <div class="dots">
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
         </div>
       </div>
     </div>
@@ -47,41 +56,61 @@ const testimonials = ref([
 
 <style scoped>
 .section {
-  background: #fff;
-  border-radius: 1rem;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-  padding: 2rem;
-  margin-bottom: 2rem;
+  background: transparent;
+  padding-bottom: 0;
 }
-.section-heading {
-  text-align: center;
-  margin-bottom: 2rem;
+
+.testimonial-card {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: var(--shadow-sm);
+  min-height: 220px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
 }
-.section-heading h2 {
-  font-size: 2.5rem;
-  font-weight: bold;
-  color: #1565c0;
-  margin-bottom: 0.5rem;
-}
-.section-heading hr {
-  border: none;
-  border-top: 4px solid #e0e4ea;
-  width: 90%;
-  margin: 0 auto;
-}
+
 .testimonial-content {
-  font-size: 1.1rem;
-  color: #444;
-}
-.quote-icon {
-  font-size: 2rem;
-  color: #ffd600;
-}
-.author-name {
-  font-size: 1.1rem;
-  font-weight: bold;
-}
-.author-position {
   font-size: 1rem;
+  color: var(--color-text-muted);
+  line-height: 1.7;
+}
+
+.quote-mark {
+  display: inline-block;
+  font-size: 2.4rem;
+  color: rgba(76, 111, 255, 0.18);
+  vertical-align: top;
+  margin-right: 0.75rem;
+}
+
+.testimonial-text {
+  display: inline-block;
+  width: calc(100% - 48px);
+}
+
+.author-name {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--color-heading);
+}
+
+.author-position {
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+}
+
+.dots {
+  display: inline-flex;
+  gap: 8px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  background: rgba(76, 111, 255, 0.45);
+  border-radius: 50%;
+  display: inline-block;
 }
 </style>

@@ -13,13 +13,13 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-a {
+  a {
   font-weight: 500;
-  color: #646cff;
+  color: #034cb7;
   text-decoration: inherit;
 }
 a:hover {
-  color: #535bf2;
+  color: #034cb7;
 }
 
 body {
@@ -35,6 +35,32 @@ h1 {
   line-height: 1.1;
 }
 
+/* Global reveal animation styles with subtle lift */
+.reveal {
+  opacity: 0;
+  transform: translateY(12px) scale(0.998);
+  /* start with a light base shadow so the lift change is noticeable */
+  box-shadow: 0 6px 18px rgba(14,30,37,0.04);
+  transition: opacity 420ms cubic-bezier(.2,.9,.2,1), transform 420ms cubic-bezier(.2,.9,.2,1), box-shadow 420ms cubic-bezier(.2,.9,.2,1);
+  will-change: transform, opacity, box-shadow;
+}
+.reveal.visible {
+  opacity: 1;
+  /* subtle scale to give depth, not to affect layout */
+  transform: translateY(0) scale(1.01);
+  /* stronger shadow on reveal to create a lift effect */
+  box-shadow: 0 20px 48px rgba(14,30,37,0.12);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    transition: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+    box-shadow: none !important;
+  }
+}
+
 button {
   border-radius: 8px;
   border: 1px solid transparent;
@@ -47,7 +73,7 @@ button {
   transition: border-color 0.25s;
 }
 button:hover {
-  border-color: #646cff;
+  border-color: #034cb7;
 }
 button:focus,
 button:focus-visible {
@@ -71,7 +97,7 @@ button:focus-visible {
     background-color: #ffffff;
   }
   a:hover {
-    color: #747bff;
+    color: #034cb7;
   }
   button {
     background-color: #f9f9f9;

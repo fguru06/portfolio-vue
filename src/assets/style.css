@@ -31,7 +31,7 @@ body {
 .card {
   background: #fff;
   border-radius: 1rem;
-  box-shadow: 0 4px 24px rgba(21, 101, 192, 0.08);
+  box-shadow: 0 4px 24px rgba(3,76,183,0.08);
   padding: 2rem;
   margin-bottom: 2rem;
   transition: box-shadow 0.2s, transform 0.3s cubic-bezier(.25,.8,.25,1);
@@ -39,7 +39,7 @@ body {
   overflow-x: hidden;
 }
 .card:hover {
-  box-shadow: 0 8px 32px rgba(21, 101, 192, 0.16);
+  box-shadow: 0 8px 32px rgba(3,76,183,0.16);
   transform: translateY(-10px);
 }
 .row {
@@ -50,18 +50,109 @@ body {
   padding-left: 0 !important;
   padding-right: 0 !important;
 }
+.section-heading {
+  text-align: center;
+  margin-bottom: 2.25rem;
+  position: relative;
+}
 .section-heading h2 {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: var(--primary-blue);
-  margin-bottom: 0.5rem;
-  letter-spacing: 1px;
+  display: inline-block;
+  margin: 0 0 0.75rem;
+  font-size: 2.25rem;
+  line-height: 1.06;
+  font-weight: 800;
+  color: var(--primary-blue); /* fallback */
+  letter-spacing: 0.2px;
+  transition: transform 220ms ease;
+}
+/* Gradient text on supporting browsers, graceful fallback to solid color */
+@supports (-webkit-background-clip: text) or (background-clip: text) {
+  .section-heading h2 {
+    background: linear-gradient(90deg, var(--primary-blue) 0%, #062a66 60%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 }
 .section-heading hr {
-  border: none;
-  border-top: 4px solid #e0e4ea;
-  width: 90%;
+  width: 88px;
+  height: 6px;
   margin: 0 auto;
+  border: none;
+  border-radius: 6px;
+  background: linear-gradient(90deg, var(--primary-blue), var(--yellow));
+  opacity: 0.95;
+  transform-origin: center;
+  transition: transform 260ms cubic-bezier(.2,.9,.2,1), opacity 180ms;
+}
+.section-heading:hover h2 {
+  transform: translateY(-2px);
+}
+.section-heading:hover hr {
+  transform: scaleX(1.06);
+  opacity: 1;
+}
+
+/* Smaller utility heading used inside cards/sections */
+.section-title {
+  font-size: 1.85rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #062a66;
+  text-align: center;
+}
+
+/* Unified heading utility for other heading levels used in cards/sections */
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--primary-blue);
+  text-align: center;
+}
+
+/* small decorative vertical bar used across section item titles */
+.title-with-bar {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  justify-content: center;
+  font-weight: 800;
+}
+.title-with-bar .bar {
+  display: inline-block;
+  width: 6px;
+  height: 30px;
+  background: var(--yellow);
+  border-radius: 3px;
+  box-shadow: 0 4px 10px rgba(255,193,7,0.08);
+  transform-origin: center;
+  transition: transform 220ms ease, box-shadow 220ms ease;
+}
+.title-with-bar:hover .bar {
+  transform: translateY(-2px) scaleY(1.02);
+}
+
+@media (max-width: 768px) {
+  .section-heading h2 {
+    font-size: 1.6rem;
+  }
+  .section-title {
+    font-size: 1.4rem;
+  }
+  .section-heading hr {
+    width: 64px;
+    height: 5px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .section-heading h2,
+  .section-heading hr,
+  .title-with-bar .bar {
+    transition: none !important;
+    transform: none !important;
+  }
 }
 .btn {
   background: var(--primary-blue);

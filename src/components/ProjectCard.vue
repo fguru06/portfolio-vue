@@ -1,5 +1,5 @@
 <template>
-  <div class="project-card">
+  <div class="project-card reveal">
     <div class="project-card__image">
       <img :src="image" :alt="title" />
       <button v-if="showLeftArrow" class="arrow left" @click="$emit('prev')">&#8592;</button>

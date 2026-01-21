@@ -4,7 +4,7 @@
       <h2>About Me</h2>
       <hr />
     </div>
-    <div class="card" tabindex="0">
+    <div class="card reveal" tabindex="0">
       <div class="about-content">
         <p>
           I'm a highly motivated and results-oriented front-end and eLearning developer with 10+ years of cutting-edge experience designing, developing, and maintaining engaging and accessible learning experiences.
@@ -28,36 +28,27 @@
 </script>
 
 <style scoped>
-.section-heading {
-  text-align: center;
-  margin-bottom: 2rem;
-}
-.section-heading h2 {
-  font-size: 2.5rem;
-  font-weight: bold;
-  color: #1565c0;
-  margin-bottom: 0.5rem;
-}
-.section-heading hr {
-  border: none;
-  border-top: 4px solid #e0e4ea;
-  width: 90%;
-  margin: 0 auto;
-}
 .card {
-  background: #fff;
-  border-radius: 1rem;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  padding: 2rem;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  padding: clamp(2rem, 3vw, 2.75rem);
+  max-width: 860px;
   margin: 0 auto;
-  max-width: 800px;
+  box-shadow: var(--shadow-sm);
 }
+
 .about-content {
-  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+  font-size: 1.05rem;
+  color: var(--color-text-muted);
 }
+
 .about-content p {
-  font-size: 1.1rem;
-  color: #444;
-  margin-bottom: 1rem;
+  margin: 0;
+  line-height: 1.7;
 }
 </style>
+```

@@ -7,7 +7,7 @@
     <div v-for="job in jobs" :key="job.company" class="experience-card card mb-4">
       <div class="experience-header">
         <div class="experience-company">
-          <span class="company-bar"></span>
+          <span class="bar company-bar" aria-hidden="true"></span>
           <span class="company-name">{{ job.company }}</span>
         </div>
         <span class="experience-date">{{ job.date }}</span>
@@ -66,65 +66,88 @@ const jobs = [
 
 <style scoped>
 .experience-card {
-  padding: 2rem 2rem 1.5rem 2rem;
-  border-radius: 1.2rem;
-  box-shadow: 0 4px 24px rgba(21, 101, 192, 0.08);
-  background: #fff;
-  margin-bottom: 2rem;
+  padding: clamp(2rem, 3vw, 2.75rem);
+  border-radius: var(--radius-lg);
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 2.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
+
 .experience-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 0.5rem;
+  gap: 1rem;
 }
+
+.experience-company {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
 .company-bar {
-  display: inline-block;
-  width: 4px;
-  height: 2rem;
-  background: #ffc107;
-  margin-right: 0.75rem;
-  border-radius: 2px;
+  width: 5px;
+  height: 42px;
+  border-radius: 999px;
+  background: var(--gradient-primary);
+  box-shadow: 0 10px 20px rgba(76, 111, 255, 0.25);
 }
+
 .company-name {
-  font-size: 2rem;
+  font-size: clamp(1.35rem, 2.2vw, 1.65rem);
   font-weight: 700;
-  color: #6c2eb6;
-  letter-spacing: 1px;
+  color: var(--color-heading);
+  letter-spacing: -0.01em;
 }
+
 .experience-date {
-  font-size: 1.1rem;
-  color: #222;
-  font-weight: 400;
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
+  background: rgba(76, 111, 255, 0.12);
+  color: var(--color-heading);
 }
+
 .experience-title {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   font-weight: 700;
-  color: #034cb7;
-  margin-bottom: 0.5rem;
+  color: var(--color-primary);
 }
+
 .experience-desc {
-  color: #222;
+  color: var(--color-text-muted);
   margin-bottom: 0.5rem;
+  line-height: 1.65;
 }
+
 .experience-list {
-  margin-left: 1.2rem;
-  margin-bottom: 0;
-  color: #222;
+  margin: 0;
+  padding-left: 1.1rem;
+  color: var(--color-text-muted);
+  display: grid;
+  gap: 0.6rem;
 }
+
 .experience-list li {
-  margin-bottom: 0.3rem;
-  font-size: 1rem;
+  line-height: 1.55;
 }
+
 @media (max-width: 768px) {
   .experience-card {
-    padding: 1rem 0.5rem;
+    padding: 1.5rem;
   }
-  .company-name {
-    font-size: 1.2rem;
+  .experience-header {
+    flex-direction: column;
+    align-items: flex-start;
   }
-  .experience-title {
-    font-size: 1rem;
+  .experience-date {
+    align-self: flex-start;
   }
 }
 </style>
