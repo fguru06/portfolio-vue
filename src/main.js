@@ -1,7 +1,6 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 import PrimeVue from 'primevue/config'
-import router from './router'
 import 'primeicons/primeicons.css'
 // Bootstrap imports for styles and JS (required for carousel controls)
 import 'bootstrap/dist/css/bootstrap.min.css'
@@ -11,7 +10,6 @@ import './assets/style.scss'
 
 const app = createApp(App)
 app.use(PrimeVue)
-app.use(router)
 app.mount('#app')
 
 // Global subtle reveal animation initializer

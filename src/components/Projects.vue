@@ -96,23 +96,52 @@
 import { ref, onMounted, nextTick } from 'vue'
 import projectsData from '../data/projects.json'
 
+const staticAssetMap = import.meta.glob('../assets/**/*.{png,PNG,jpg,JPG,jpeg,JPEG,webp,WEBP,avif,AVIF,gif,GIF,svg,SVG,mp4,MP4,webm,WEBM,ogg,OGG,mp3,MP3,pdf,PDF,json,JSON,woff,WOFF,woff2,WOFF2,ttf,TTF}', {
+  eager: true,
+  import: 'default'
+})
+
+const htmlAssetMap = {
+  ...import.meta.glob('../assets/interactives/**/*.html', {
+    eager: true,
+    query: '?url',
+    import: 'default'
+  }),
+  ...import.meta.glob('../assets/interactives/**/*.HTML', {
+    eager: true,
+    query: '?url',
+    import: 'default'
+  })
+}
+
+const assetMap = { ...staticAssetMap, ...htmlAssetMap }
+
 const resolveMediaPath = (value) => {
   if (!value) return value
   if (typeof value !== 'string') return value
   if (/^https?:\/\//i.test(value)) return value
 
-  const trimmed = value.replace(/^\/+/, '')
+  let normalized = value.replace(/^\/+/, '')
+  if (normalized.startsWith('src/')) normalized = normalized.replace(/^src\//, '')
 
-  if (trimmed.startsWith('src/')) {
-    const relative = trimmed.replace(/^src\//, '')
-    return new URL(`../${relative}`, import.meta.url).href
+  const candidates = []
+
+  if (normalized.startsWith('assets/')) {
+    const withoutPrefix = normalized.replace(/^assets\//, '')
+    candidates.push(`../assets/${withoutPrefix}`)
+    candidates.push(`../${normalized}`)
+  } else {
+    candidates.push(`../assets/${normalized}`)
+    candidates.push(`../${normalized}`)
   }
 
-  if (trimmed.startsWith('assets/')) {
-    return new URL(`../${trimmed}`, import.meta.url).href
+  for (const key of candidates) {
+    if (assetMap[key]) {
+      return assetMap[key]
+    }
   }
 
-  return new URL(`../${trimmed}`, import.meta.url).href
+  return value
 }
 
 const normalizeProject = (project) => {

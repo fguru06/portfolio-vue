@@ -51,6 +51,21 @@ const getNavOffset = () => {
   return navEl.offsetHeight + extra;
 };
 
+function collapseNavIfOpen() {
+  const navCollapse = document.getElementById('navbarNav');
+  if (!navCollapse || !navCollapse.classList.contains('show')) return;
+  const bootstrap = window.bootstrap;
+  if (bootstrap && typeof bootstrap.Collapse === 'function') {
+    let instance = bootstrap.Collapse.getInstance(navCollapse);
+    if (!instance) {
+      instance = new bootstrap.Collapse(navCollapse, { toggle: false });
+    }
+    instance.hide();
+  } else {
+    navCollapse.classList.remove('show');
+  }
+}
+
 function setManualSelection(section) {
   manualSelection = section;
   if (manualSelectionTimeout) {
@@ -65,6 +80,7 @@ function setManualSelection(section) {
 function scrollToSection(section) {
   setManualSelection(section);
   activeSection.value = section;
+  collapseNavIfOpen();
   if (section === 'home') {
     window.scrollTo({ top: 0, behavior: 'smooth' });
     return;
@@ -84,23 +100,22 @@ let manualSelectionTimeout = null;
 onMounted(() => {
   sections.forEach((section) => {
     const el = document.getElementById(section);
-    if (el) {
-      const observer = new window.IntersectionObserver(
-        ([entry]) => {
-          if (manualSelection) return;
-          if (entry.isIntersecting && entry.intersectionRatio > 0.3) {
-            activeSection.value = section;
-          }
-        },
-        {
-          root: null,
-          rootMargin: `-${getNavOffset()}px 0px 0px 0px`,
-          threshold: [0.3, 0.5, 0.7]
+    if (!el) return;
+    const observer = new window.IntersectionObserver(
+      ([entry]) => {
+        if (manualSelection) return;
+        if (entry.isIntersecting && entry.intersectionRatio > 0.3) {
+          activeSection.value = section;
         }
-      );
-      observer.observe(el);
-      observers.push(observer);
-    }
+      },
+      {
+        root: null,
+        rootMargin: `-${getNavOffset()}px 0px 0px 0px`,
+        threshold: [0.3, 0.5, 0.7],
+      }
+    );
+    observer.observe(el);
+    observers.push(observer);
   });
 
   fallbackScrollHandler = () => {
@@ -205,6 +220,7 @@ onUnmounted(() => {
   align-items: center;
   flex: 1 1 auto;
   justify-content: flex-end;
+  min-width: 0;
 }
 
 .nav-right {
@@ -301,9 +317,75 @@ onUnmounted(() => {
   background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg"><path stroke="%234c6fff" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" d="M4 8h22M4 15h22M4 22h22"/></svg>') center/contain no-repeat;
 }
 
+@media (max-width: 1200px) {
+  .navbar-inner {
+    padding: 0.9rem 1.65rem;
+  }
+  .navbar-brand-wrap {
+    margin-right: clamp(0.8rem, 3vw, 1.6rem);
+  }
+  .nav-right {
+    gap: 0.6rem;
+    padding: 0.35rem 0.5rem;
+  }
+  .nav-link {
+    padding: 0.5rem 0.95rem;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 1080px) {
+  .nav-right {
+    gap: 0.5rem;
+    padding: 0.3rem 0.4rem;
+  }
+  .nav-link {
+    padding: 0.45rem 0.8rem;
+    font-size: 0.9rem;
+  }
+  .navbar-brand-name.vibrant-brand {
+    font-size: 1.48rem;
+  }
+}
+
+@media (max-width: 1040px) {
+  .navbar-inner {
+    padding: 0.85rem 1.4rem;
+  }
+  .navbar-brand-wrap {
+    margin-right: clamp(0.55rem, 2.5vw, 1.2rem);
+  }
+  .nav-right {
+    gap: 0.35rem;
+    padding: 0.22rem 0.32rem;
+  }
+  .nav-link {
+    padding: 0.38rem 0.68rem;
+    font-size: 0.86rem;
+  }
+  .navbar-brand-name.vibrant-brand {
+    font-size: 1.36rem;
+  }
+}
+
 @media (max-width: 992px) {
   .navbar-inner {
     padding: 0.85rem 1.5rem;
+    flex-wrap: wrap;
+  }
+  .navbar-links-wrap {
+    width: 100%;
+    justify-content: flex-end;
+    gap: 0.5rem;
+  }
+  .navbar-toggler {
+    order: 1;
+    margin-left: auto;
+  }
+  .navbar-collapse {
+    order: 2;
+    width: 100%;
+    margin-top: 0.75rem;
   }
   .nav-right {
     flex-direction: column;
@@ -314,6 +396,7 @@ onUnmounted(() => {
     border: none;
     box-shadow: none;
     backdrop-filter: none;
+    width: 100%;
   }
   .nav-link {
     display: block;
