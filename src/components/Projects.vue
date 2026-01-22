@@ -311,20 +311,40 @@ onMounted(async () => {
   letter-spacing: 0.08em;
 }
 
+.carousel-indicators {
+  gap: 0.55rem;
+  margin-top: 1rem;
+}
+
 .carousel-indicators [data-bs-target] {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background-color: rgba(76, 111, 255, 0.15);
+  width: 18px;
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.22);
+  border: none;
+  opacity: 0.65;
+  transition: background 200ms ease, transform 160ms ease, box-shadow 220ms ease, opacity 160ms ease;
+}
+
+.carousel-indicators [data-bs-target]:hover,
+.carousel-indicators [data-bs-target]:focus {
+  opacity: 1;
+  background: rgba(15, 23, 42, 0.32);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.16);
 }
 
 .carousel-indicators .active {
-  background: var(--color-primary);
+  opacity: 1;
+  background: linear-gradient(135deg, rgba(79, 70, 229, 0.65), rgba(20, 184, 166, 0.65));
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.75),
+    0 10px 24px rgba(79, 70, 229, 0.32);
 }
 
 .thumb-strip {
   max-width: 420px;
-  margin: 0 auto;
+  margin: 1.2rem auto 0;
   gap: 0.6rem;
 }
 
