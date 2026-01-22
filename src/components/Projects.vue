@@ -101,20 +101,7 @@ const staticAssetMap = import.meta.glob('../assets/**/*.{png,PNG,jpg,JPG,jpeg,JP
   import: 'default'
 })
 
-const htmlAssetMap = {
-  ...import.meta.glob('../assets/interactives/**/*.html', {
-    eager: true,
-    query: '?url',
-    import: 'default'
-  }),
-  ...import.meta.glob('../assets/interactives/**/*.HTML', {
-    eager: true,
-    query: '?url',
-    import: 'default'
-  })
-}
-
-const assetMap = { ...staticAssetMap, ...htmlAssetMap }
+const assetMap = { ...staticAssetMap }
 
 const resolveMediaPath = (value) => {
   if (!value) return value
@@ -144,6 +131,23 @@ const resolveMediaPath = (value) => {
   return value
 }
 
+const resolveInteractivePath = (value) => {
+  if (!value) return value
+  if (typeof value !== 'string') return value
+  if (/^https?:\/\//i.test(value)) return value
+
+  let normalized = value.replace(/^\/+/, '')
+  if (normalized.startsWith('assets/')) {
+    normalized = normalized.replace(/^assets\//, '')
+  }
+  if (!normalized.startsWith('interactives/')) {
+    normalized = `interactives/${normalized}`
+  }
+
+  const base = (import.meta.env.BASE_URL || '/').replace(/\/$/, '')
+  return `${base}/${normalized}`
+}
+
 const normalizeProject = (project) => {
   const normalized = { ...project }
   if (Array.isArray(project.images)) {
@@ -153,10 +157,11 @@ const normalizeProject = (project) => {
     normalized.video = resolveMediaPath(project.video)
   }
   if (project.demo) {
-    normalized.demo = resolveMediaPath(project.demo)
+    normalized.demo = resolveInteractivePath(project.demo)
   }
   if (project.details) {
-    normalized.details = resolveMediaPath(project.details)
+    const isHtml = typeof project.details === 'string' && /\.html?$/i.test(project.details)
+    normalized.details = isHtml ? resolveInteractivePath(project.details) : resolveMediaPath(project.details)
   }
   return normalized
 }
