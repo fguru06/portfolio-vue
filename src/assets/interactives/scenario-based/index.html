@@ -1,14 +1,65 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>scenario-based-decision</title>
-    <script type="module" crossorigin src="assets/index-Nt9SU-m5.js"></script>
-    <link rel="stylesheet" crossorigin href="assets/index-F1Oc0yFl.css">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Scenario-Based Decision Tree</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/scenario.css" />
   </head>
   <body>
-    <div id="app"></div>
+    <main class="app" id="app" aria-live="polite">
+      <header class="app__header">
+        <h1 class="app__title">Scenario-Based Decision Tree</h1>
+        <p class="app__subtitle">
+          Navigate a branching scenario and see how each choice shapes the outcome. Every path provides feedback and contributes to your score.
+        </p>
+        <div class="app__meta" role="status">
+          <span id="current-step">Step 1</span>
+          <span aria-hidden="true">•</span>
+          <span id="score-pill">Score: 0</span>
+        </div>
+      </header>
+
+      <section class="card" id="scenario-card">
+        <header class="card__header">
+          <h2 class="card__title" id="node-title">Loading scenario…</h2>
+          <p class="card__prompt" id="node-text"></p>
+        </header>
+
+        <ul class="choices" id="choice-list" aria-live="polite"></ul>
+
+        <div class="feedback" id="feedback" hidden></div>
+      </section>
+
+      <section class="summary" id="summary" hidden>
+        <h2 class="summary__title">Scenario Summary</h2>
+        <p class="summary__outcome" id="summary-outcome"></p>
+        <p class="summary__description" id="summary-summary"></p>
+        <p class="summary__body" id="summary-description"></p>
+
+        <div class="summary__stats">
+          <div class="summary__stat">
+            <span class="summary__label">Total Score</span>
+            <span class="summary__value" id="summary-score">0</span>
+          </div>
+          <div class="summary__stat">
+            <span class="summary__label">Path Length</span>
+            <span class="summary__value" id="summary-steps">0</span>
+          </div>
+        </div>
+
+        <details class="summary__details">
+          <summary>Review your decision path</summary>
+          <ol id="decision-log" class="decision-log"></ol>
+        </details>
+
+        <button class="button button--primary" id="restart-btn" type="button">Start Over</button>
+      </section>
+    </main>
+
+    <script src="assets/scenario.js"></script>
   </body>
 </html>
