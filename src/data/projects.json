@@ -7,6 +7,13 @@
     "demo": "assets/interactives/humanbody/index.html"
   },
   {
+    "title": "Scenario-Based Decision Tree",
+    "description": "Designed a branching decision tree where learners apply soft skills, compliance, leadership, and clinical judgment while navigating choices that surface tailored outcomes, feedback, or consequences. The experience closes with a scored recap that highlights the path taken and knowledge gaps.",
+    "images": ["/src/assets/images/Scenario-1.png", "/src/assets/images/Scenario-2.png", "/src/assets/images/Scenario-3.png"],
+    "tech": ["HTML5", "CSS3", "JavaScript", "Vue.js", "React"],
+    "demo": "assets/interactives/scenario-based/index.html"
+  },
+  {
     "title": "Interactive Flashcard Health Learning Tool",
     "description": "An engaging health education flashcard system designed for interactive learning. This tool features a card-based interface where students can review health and medical concepts through an intuitive flip-card experience. The application provides a structured learning environment with modern responsive design, making it perfect for health education courses and medical training programs.",
     "images": ["https://images.pexels.com/photos/7722918/pexels-photo-7722918.jpeg"],
