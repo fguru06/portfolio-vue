@@ -7,6 +7,13 @@
     "demo": "assets/interactives/humanbody/index.html"
   },
   {
+    "title": "Knee Replacement Procedure Flow",
+    "description": "A guided knee replacement journey that adapts to the learner's role, shows branching inpatient and outpatient paths, and keeps progress visible with status chips. Each step reveals clinical guidance, expected timelines, and embedded knowledge checks so learners can confirm understanding before moving forward.",
+    "images": ["/src/assets/images/screenshot/knee1.png", "/src/assets/images/screenshot/knee2.png", "/src/assets/images/screenshot/knee3.png"],
+    "tech": ["HTML5", "CSS3", "JavaScript", "Vue.js", "Responsive Design", "Accessibility"],
+    "demo": "assets/interactives/health-timeline/index.html"
+  },
+  {
     "title": "Scenario-Based Decision Tree",
     "description": "Designed a branching decision tree where learners apply soft skills, compliance, leadership, and clinical judgment while navigating choices that surface tailored outcomes, feedback, or consequences. The experience closes with a scored recap that highlights the path taken and knowledge gaps.",
     "images": ["/src/assets/images/Scenario-1.png", "/src/assets/images/Scenario-2.png", "/src/assets/images/Scenario-3.png"],
