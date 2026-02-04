@@ -68,11 +68,6 @@
     "video": "assets/videos/Program-Project-and-Portfolio-Management.webm"
   },
   {
-    "title": "Interactive Nursing Practice Simulator",
-    "description": "This project was a Vue.js 3 application (using the Composition API) designed to simulate healthcare nursing practice. Users interact with a responsive and fully accessible body image, clicking on designated “hotspots” to reveal detailed descriptions of specific medical scenarios. The application also includes a note-taking feature, allowing users to record observations and save their completed assessments as PDFs.",
-    "tech": ["Vue.js 3", "HTML5", "CSS3", "JavaScript", "Accessibility", "Responsive Design"]
-  },
-  {
     "title": "Custom LMS Themes",
     "description": "Developed custom themes using JavaScript and CSS to align with partner branding, enhancing LMS customization and front-end development for educational institutions.",
     "tech": ["HTML5", "CSS3", "JavaScript", "LMS", "Responsive Design"]
@@ -85,28 +80,15 @@
     "video": "assets/videos/Prescriptive-Authority-Websites.webm"
   },
   {
-    "title": "Multiple Choice Activity",
-    "description": "Developed a multiple-choice quiz activity where students can select answers and print their submissions as PDFs. All responses are stored in a database for instructor review.",
-  "images": ["/src/assets/images/Imager1.jpg", "/src/assets/images/Imager2.jpg", "/src/assets/images/Imager3.jpg"],
-    "tech": ["HTML5", "CSS3", "JavaScript", "Accessibility", "Responsive Design"],
-    "video": "assets/videos/Making-the-Best-of-Your-Field-Experience.webm"
-  },
-  {
     "title": "Interactive Presentation",
     "description": "Created a presentation feature where students can explore scenarios through buttons, with each scenario displaying information in a tabbed format.",
   "images": ["/src/assets/images/Imageru1.jpg", "/src/assets/images/Imageru2.jpg", "/src/assets/images/Imageru3.jpg"],
     "tech": ["HTML5", "CSS3", "JavaScript", "Accessibility", "Responsive Design"]
   },
   {
-    "title": "Responsive Media Framework",
-    "description": "Contributed to the development of an in-house framework for creating responsive media content. Led the R&D team for accessibility testing and development.",
-    "tech": ["HTML5", "CSS3", "JavaScript", "Accessibility", "Responsive Design"]
-  },
-  {
-    "title": "Peer Evaluation Group Activity",
-    "description": "Developed a system enabling students to evaluate their group members, while instructors can create unlimited groups with unlimited members. The system automates data storage in a database, eliminating manual effort for instructors.",
-  "images": ["/src/assets/images/Peernew1.jpg", "/src/assets/images/peernew2.jpg", "/src/assets/images/peernew3.jpg"],
-    "tech": ["HTML5", "CSS3", "JavaScript", "Database", "LMS Integration"],
-    "video": "assets/videos/Peer-Evaluation-Form2.webm"
+    "title": "Drag-and-Drop Activity",
+    "description": "Developed a drag-and-drop activity where students match terms to definitions. The activity provides instant feedback and saves results in a database for instructor review.",
+  "images": ["/src/assets/images/Imagedd1.jpg", "/src/assets/images/Imagedd2.jpg", "/src/assets/images/Imagedd3.jpg"],
+    "tech": ["HTML5", "CSS3", "JavaScript", "LMS", "Responsive Design"]
   }
 ]
