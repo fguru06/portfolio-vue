@@ -14,6 +14,13 @@
     "demo": "interactives/humanbody/index.html"
   },
   {
+    "title": "AutoTech Logic Engine",
+    "description": "An advanced interactive learning module for automotive technology featuring a logic-based diagnostic engine. Learners work through real-world vehicle troubleshooting scenarios, applying technical knowledge to identify problems and select appropriate solutions. The engine provides instant feedback on diagnostic choices, visual system diagrams, and comprehensive analytics tracking learner progress and decision-making patterns.",
+    "images": ["/src/assets/images/screenshot/auto1.png", "/src/assets/images/screenshot/auto2.png", "/src/assets/images/screenshot/auto3.png"],
+    "tech": ["HTML5", "CSS3", "JavaScript", "Vue.js", "Responsive Design", "Accessibility", "Diagnostic Engine"],
+    "demo": "interactives/autotech/index.html"
+  },
+  {
     "title": "Knee Replacement Procedure Flow",
     "description": "A guided knee replacement journey that adapts to the learner's role, shows branching inpatient and outpatient paths, and keeps progress visible with status chips. Each step reveals clinical guidance, expected timelines, and embedded knowledge checks so learners can confirm understanding before moving forward.",
     "images": ["/src/assets/images/screenshot/knee1.png", "/src/assets/images/screenshot/knee2.png", "/src/assets/images/screenshot/knee3.png"],
