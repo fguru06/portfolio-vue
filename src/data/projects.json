@@ -4,49 +4,49 @@
     "description": "An interactive Emergency Department workflow activity featuring multiple-choice decision points where learners identify and select the correct health information systems used throughout patient care. Each question provides instant feedback with visual indicators for correct and incorrect selections, accompanied by real-time response analytics displayed in dynamic charts. The activity concludes with a comprehensive summary and downloadable PDF results for review.",
     "images": ["/src/assets/images/screenshot/mc1.png", "/src/assets/images/screenshot/mc2.png", "/src/assets/images/screenshot/mc3.png", "/src/assets/images/screenshot/mc4.png"],
     "tech": ["HTML5", "CSS3", "JavaScript", "Vue.js", "Highcharts", "Responsive Design", "Accessibility"],
-    "demo": "assets/interactives/multiple-choice/index.html"
+    "demo": "interactives/multiple-choice/index.html"
   },
   {
     "title": "Interactive Human Body with Hotspots & Quiz",
     "description": "An interactive human body illustration with clickable hotspots to reveal information about different body parts. Includes a quiz feature to test knowledge. Built with modern web technologies for accessibility and engagement.",
-  "images": ["/src/assets/interactives/humanbody/assets/Hbody.166ab625.jpg"],
+  "images": ["/interactives/humanbody/assets/Hbody.166ab625.jpg"],
     "tech": ["HTML5", "CSS3", "JavaScript", "Vue.js", "Responsive Design", "Accessibility"],
-    "demo": "assets/interactives/humanbody/index.html"
+    "demo": "interactives/humanbody/index.html"
   },
   {
     "title": "Knee Replacement Procedure Flow",
     "description": "A guided knee replacement journey that adapts to the learner's role, shows branching inpatient and outpatient paths, and keeps progress visible with status chips. Each step reveals clinical guidance, expected timelines, and embedded knowledge checks so learners can confirm understanding before moving forward.",
     "images": ["/src/assets/images/screenshot/knee1.png", "/src/assets/images/screenshot/knee2.png", "/src/assets/images/screenshot/knee3.png"],
     "tech": ["HTML5", "CSS3", "JavaScript", "Vue.js", "Responsive Design", "Accessibility"],
-    "demo": "assets/interactives/health-timeline/index.html"
+    "demo": "interactives/health-timeline/index.html"
   },
   {
     "title": "Scenario-Based Decision Tree",
     "description": "Designed a branching decision tree where learners apply soft skills, compliance, leadership, and clinical judgment while navigating choices that surface tailored outcomes, feedback, or consequences. The experience closes with a scored recap that highlights the path taken and knowledge gaps.",
     "images": ["/src/assets/images/Scenario-1.png", "/src/assets/images/Scenario-2.png", "/src/assets/images/Scenario-3.png"],
     "tech": ["HTML5", "CSS3", "JavaScript", "Vue.js", "React"],
-    "demo": "assets/interactives/scenario-based/index.html"
+    "demo": "interactives/scenario-based/index.html"
   },
   {
     "title": "Interactive Flashcard Health Learning Tool",
     "description": "An engaging health education flashcard system designed for interactive learning. This tool features a card-based interface where students can review health and medical concepts through an intuitive flip-card experience. The application provides a structured learning environment with modern responsive design, making it perfect for health education courses and medical training programs.",
     "images": ["https://images.pexels.com/photos/7722918/pexels-photo-7722918.jpeg"],
     "tech": ["HTML5", "CSS3", "JavaScript", "Vue.js", "Responsive Design", "Accessibility"],
-    "demo": "assets/interactives/flashcard-health/index.html"
+    "demo": "interactives/flashcard-health/index.html"
   },
   {
     "title": "Likert Scale Health Survey Interactive",
     "description": "A Likert scale-based health survey interactive built with modern web technologies. Users can rate statements on a scale, and results are visualized for instant feedback. This interactive supports multiple users, saves data in a database, and displays user averages in a graph for enhanced engagement and analytics. Designed for accessibility and responsive use in educational or healthcare settings.",
   "images": ["/src/assets/images/Likertsurvey1.png", "/src/assets/images/Likertsurvey2.png"],
     "tech": ["HTML5", "CSS3", "JavaScript", "Vue.js", "Responsive Design", "Accessibility"],
-    "demo": "assets/interactives/likertscale-health/index.html"
+    "demo": "interactives/likertscale-health/index.html"
   },
   {
     "title": "Peer Evaluation (Self & Peer with Analytics)",
     "description": "A robust peer evaluation tool that enables both self and peer assessments within groups. This interactive allows students to rate themselves and their peers on various criteria, with results visualized using Highcharts for clear, actionable insights. The system automatically calculates and displays group and individual averages, making it easy for instructors and students to identify strengths and areas for improvement. Designed for accessibility, responsive use, and seamless integration into eLearning environments.",
   "images": ["/src/assets/images/peereval1.png", "/src/assets/images/peereval2.png", "/src/assets/images/peereval3.png"],
     "tech": ["HTML5", "CSS3", "JavaScript", "Highcharts", "Accessibility", "Responsive Design"],
-    "demo": "assets/interactives/peereval/index.html"
+    "demo": "interactives/peereval/index.html"
   },
   {
     "title": "Complex Survey Activity",

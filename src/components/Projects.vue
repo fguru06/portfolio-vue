@@ -70,7 +70,7 @@
                 class="btn btn-outline-primary me-2"
                 aria-label="View Demo"
                 tabindex="0"
-                @click="openDemo(project.demo)"
+                @click="openDemoModal(project.demo)"
               >
                 View Demo
               </button>
@@ -89,6 +89,16 @@
         </div>
       </div>
     </div>
+
+    <!-- Demo Modal -->
+    <Teleport to="body">
+      <div v-if="activeDemoUrl" class="modal-overlay" @click.self="closeDemoModal">
+        <div class="modal-container">
+          <button class="close-btn" @click="closeDemoModal" aria-label="Close demo">&times;</button>
+          <iframe :src="activeDemoUrl" class="demo-frame" title="Project Demo"></iframe>
+        </div>
+      </div>
+    </Teleport>
   </section>
 </template>
 
@@ -168,8 +178,16 @@ const normalizeProject = (project) => {
 
 const projects = ref(projectsData.map(normalizeProject))
 
-function openDemo(demoUrl) {
-  window.open(demoUrl, '_blank')
+const activeDemoUrl = ref('')
+
+function openDemoModal(url) {
+  activeDemoUrl.value = url
+  document.body.style.overflow = 'hidden' // Prevent scrolling
+}
+
+function closeDemoModal() {
+  activeDemoUrl.value = ''
+  document.body.style.overflow = ''
 }
 
 function openDetails(detailsUrl) {
@@ -383,5 +401,75 @@ onMounted(async () => {
   .project-img {
     height: 220px;
   }
+}
+
+/* Modal Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  animation: fadeIn 0.2s ease-out;
+}
+
+.modal-container {
+  position: relative;
+  width: 90vw;
+  height: 90vh;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+  animation: slideUp 0.3s ease-out;
+}
+
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.8);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 2rem;
+  line-height: 1;
+  color: #333;
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transition: all 0.2s ease;
+}
+
+.close-btn:hover {
+  background: #fff;
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.demo-frame {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
 }
 </style>
