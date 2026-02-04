@@ -1,5 +1,12 @@
 [
   {
+    "title": "Emergency Department Health Information Systems",
+    "description": "An interactive Emergency Department workflow activity featuring multiple-choice decision points where learners identify and select the correct health information systems used throughout patient care. Each question provides instant feedback with visual indicators for correct and incorrect selections, accompanied by real-time response analytics displayed in dynamic charts. The activity concludes with a comprehensive summary and downloadable PDF results for review.",
+    "images": ["/src/assets/images/screenshot/mc1.png", "/src/assets/images/screenshot/mc2.png", "/src/assets/images/screenshot/mc3.png", "/src/assets/images/screenshot/mc4.png"],
+    "tech": ["HTML5", "CSS3", "JavaScript", "Vue.js", "Highcharts", "Responsive Design", "Accessibility"],
+    "demo": "assets/interactives/multiple-choice/index.html"
+  },
+  {
     "title": "Interactive Human Body with Hotspots & Quiz",
     "description": "An interactive human body illustration with clickable hotspots to reveal information about different body parts. Includes a quiz feature to test knowledge. Built with modern web technologies for accessibility and engagement.",
   "images": ["/src/assets/interactives/humanbody/assets/Hbody.166ab625.jpg"],
