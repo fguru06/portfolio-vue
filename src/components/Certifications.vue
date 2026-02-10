@@ -10,7 +10,7 @@
           <span class="bar" aria-hidden="true"></span>
           EDUCATION
         </h3>
-        <p class="education-details mb-2">Bachelor of Science (BSc) in Math-Physics-Statistics, Punjab University</p>
+        <p class="education-details mb-2">Bachelor of Science (BSc) in Math-Physics-Statistics</p>
         <p class="education-details">Continuously expanding my skillset across the full spectrum of front-end development and the design, development, and delivery of effective eLearning solutions.</p>
       </div>
 
