@@ -96,6 +96,7 @@
     "title": "Drag-and-Drop Activity",
     "description": "Developed a drag-and-drop activity where students match terms to definitions. The activity provides instant feedback and saves results in a database for instructor review.",
   "images": ["/src/assets/images/Imagedd1.jpg", "/src/assets/images/Imagedd2.jpg", "/src/assets/images/Imagedd3.jpg"],
-    "tech": ["HTML5", "CSS3", "JavaScript", "LMS", "Responsive Design"]
+    "tech": ["HTML5", "CSS3", "JavaScript", "LMS", "Responsive Design"],
+    "demo": "interactives/dragndrop/index.html"
   }
 ]
