@@ -21,6 +21,13 @@
     "demo": "interactives/autotech/index.html"
   },
   {
+    "title": "Cybersecurity Module for Corporate Training",
+    "description": "An interactive cybersecurity learning module built for corporate training that helps employees identify threats, apply secure practices, and make risk-aware decisions through guided activities and knowledge checks.",
+    "images": ["/src/assets/images/screenshot/cyber1.png", "/src/assets/images/screenshot/cyber2.png", "/src/assets/images/screenshot/cyber3.png"],
+    "tech": ["HTML5", "CSS3", "JavaScript", "Corporate Training", "Accessibility", "Responsive Design"],
+    "demo": "interactives/cybersecurity-module/index.html"
+  },
+  {
     "title": "Knee Replacement Procedure Flow",
     "description": "A guided knee replacement journey that adapts to the learner's role, shows branching inpatient and outpatient paths, and keeps progress visible with status chips. Each step reveals clinical guidance, expected timelines, and embedded knowledge checks so learners can confirm understanding before moving forward.",
     "images": ["/src/assets/images/screenshot/knee1.png", "/src/assets/images/screenshot/knee2.png", "/src/assets/images/screenshot/knee3.png"],
@@ -95,7 +102,7 @@
   {
     "title": "Drag-and-Drop Activity",
     "description": "Developed a drag-and-drop activity where students match terms to definitions. The activity provides instant feedback and saves results in a database for instructor review.",
-  "images": ["/src/assets/images/Imagedd1.jpg", "/src/assets/images/Imagedd2.jpg", "/src/assets/images/Imagedd3.jpg"],
+    "images": ["/src/assets/images/screenshot/dd1.png", "/src/assets/images/screenshot/dd2.png"],
     "tech": ["HTML5", "CSS3", "JavaScript", "LMS", "Responsive Design"],
     "demo": "interactives/dragndrop/index.html"
   }
